@@ -1,4 +1,4 @@
-.PHONY: all open
+.PHONY: all open clean
 
 tex = 0-introduction.tex \
       1-timing-attacks.tex \
@@ -18,3 +18,6 @@ main.pdf: $(tex) $(bib)
 	pdflatex main
 	bibtex main
 	pdflatex main
+
+clean:
+	@rm -fv main.aux main.bbl main.blg main.dvi main.log main.pdf main.toc
