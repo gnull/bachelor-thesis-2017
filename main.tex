@@ -14,43 +14,23 @@
 
 \tableofcontents
 
-\chapter*{Задание на ВКР}
-
-TODO: Выянить, что это такое.
-
-\chapter*{Аннотация}
-
-TODO: Это разве не часть поянительной записки?
-
-\chapter*{Список обозначений}
-
-\chapter*{Термины}
+% Вся дичь с терминами и аннотацией
+input{abstrac-and-terms}
 
 \chapter*{Введение}
-
-  \input{0-introduction}
+\input{0-introduction}
 
 \chapter{Атаки по времени}
-
-Что такое атаки по сторонним каналам. Что такое атаки по времени, чем они примечательны.
-
-Разные сценарии атак по времени.
-
-Методы анализа данных при атаках по времени. Статистические методы.
+\input{1-timing-attacks}
 
 \chapter{Опериционная система Linux}
-
-Ядро линукс. Выполнение системного вызова execve.
-
-Приём пакета UDP-сокетом.
+\input{2-linux}
 
 \chapter{Эксперименты}
+\input{3-experiments}
 
-\section{Методика провдения экспериментов}
-
-\section{Используемые инструменты}
-
-\section{Анализ результатов}
+\bibliographystyle{plain}
+\bibliography{bibliography} 
 
 \end{document}
 
