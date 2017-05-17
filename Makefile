@@ -15,4 +15,6 @@ open: main.pdf
 	evince main.pdf
 
 main.pdf: $(tex) $(bib)
-	pdflatex main.tex
+	pdflatex main
+	bibtex main
+	pdflatex main
