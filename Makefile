@@ -1,17 +1,10 @@
 all: build run
 
 build:
-	latexmk -xelatex \
-	-synctex=1 main.tex
+	latexmk -xelatex -synctex=1 main.tex
 	
 run:
-	open -a Preview.app main.pdf & #Открываем pdf в Preview
+	evince main.pdf &
 	
 clean:
-	rm *.aux \
-	*.fdb_latexmk \
-	*.fls \
-	*.log \
-	*.out \
-	*.synctex.gz \
-	*.toc
+	@rm -vf *.aux *.fdb_latexmk *.fls *.log *.out *.synctex.gz *.toc *.xdv main.pdf

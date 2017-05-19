@@ -7,3 +7,5 @@
 *.toc
 *.tex~
 canvas/*
+*.xdv
+main.pdf
