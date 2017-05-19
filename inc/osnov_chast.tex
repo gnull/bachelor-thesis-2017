@@ -196,23 +196,17 @@ all_domains['word_grams'] = dict_counts * dict_vc.transform(all_domains['domain'
     Для анализа каждого из предложенных признаков были построены наглядные графики. Исходя из рис. 4.1 можно заметить, что вредоносные доменные имена не имеют длину менее 6 символов, что оправдывается высокой стоимостью таких доменных имен и повышенной вероятностью появления коллизий. Графики энтропии рис. 4.1 и рис. 4.2 доказывают, что, основываясь лишь на этом признаке, невозможно выделить вредоносные доменные имена в отдельный класс, так как множество значений энтропии вредоносных доменных имен является подмножеством множества значений энтропии легитимных доменных имен. А признак diff на риc 4.3 был добавлен в модель после анализа признаков alexa gram и word gram. Вместе, эти признаки, позволяют выделить отдельные доменные имена в класс вредоносных.
 
     \begin{figure}[H]
-        \left
         \includegraphics[width=0.5\linewidth]{images/linear_class/length.png}
-        \right
         \includegraphics[width=0.5\linewidth]{images/linear_class/entropy.png} \label{length_entropy}
         \caption{Длина и энтропия доменных имен}
     \end{figure}
     \begin{figure}[H]
-        \left
         \includegraphics[width=0.5\linewidth]{images/linear_class/entropy2.png}
-        \right
         \includegraphics[width=0.5\linewidth]{images/linear_class/alexa_gramm.png}
         \caption{Зависимость энтропии и признака alexa gram от длины доменного имени} \label{entropy_alexa}
     \end{figure}
     \begin{figure}[H]
-        \left
         \includegraphics[width=0.5\linewidth]{images/linear_class/word_gramm.png}
-        \right
         \includegraphics[width=0.5\linewidth]{images/linear_class/diff.png}
         \caption{Зависимость признаков word gram и diff от длины доменного имени} \label{word_gram_diff}
     \end{figure}
@@ -304,18 +298,14 @@ all_domains['word_grams'] = dict_counts * dict_vc.transform(all_domains['domain'
     Используя алгоритм нелинейного снижения размерности и визуализации многомерных переменных t-SNE (t-distributed stochastic neighbor embedding, стохастическое вложение соседей с распределением Стьюдента), описанный в работе \cite{Maaten}, была произведена визуалиазация скрытых состояний на первых и последних шагах обучения модели при задаче многоклассовой классификации рис. 4.10. Алгоритм t-SNE обеспечивает эффективный метод визуализации сложных наборов данных. Он успешно обнаруживает скрытые структуры в данных, демонстрирует группы и компенсирует нелинейные отклонения по измерениям, сохраняя пропорции расстояний.
 
     \begin{figure}[H]
-        \left
         \includegraphics[width=0.5\linewidth]{images/lstm_class/not_train.png}
-        \right
         \includegraphics[width=0.5\linewidth]{images/lstm_class/train.png}
         \caption{Визуализация скрытых состояний на первых и последних шагах обучения модели}\label{visual}
     \end{figure}
     Для оценки качества классификации все 4 модели были построены на 1 графике рис. 4.11:
     многоклассовая классификация - левый график, бинарная классификация - правый график.
     \begin{figure}[H]
-        \left
         \includegraphics[width=0.5\linewidth]{images/lstm_class/all.png}
-        \right
         \includegraphics[width=0.5\linewidth]{images/lstm_class/2_class.png}
         \caption{Результаты обучения многоклассовой и бинарной классификации}\label{length_entropy}
     \end{figure}
