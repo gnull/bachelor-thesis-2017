@@ -7,4 +7,13 @@ run:
 	evince main.pdf &
 	
 clean:
-	@rm -vf *.aux *.fdb_latexmk *.fls *.log *.out *.synctex.gz *.toc *.xdv main.pdf
+	@rm -vf main.aux \
+	        main.fdb_latexmk \
+	        main.fls \
+	        main.log \
+	        main.out \
+	        main.pdf \
+	        main.synctex.gz \
+	        main.toc \
+	        main.xdv \
+	        osnov_chast.tex
