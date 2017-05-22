@@ -137,11 +137,15 @@ $ ./collect.pl './timestamp ./vulnerable' 1000000 10 5 > ext-to-5-init.csv
 
 В результате выполнения команд из листинга~\ref{src:collcalls} были получены два файла
 \texttt{int-to-5-init.csv} и \texttt{ext-to-5-init-csv}. Каждый из которых содержит CSV-таблицу
-из трёх столбцов: \texttt{iterations} -- число итераций цикла, представленного на
-листинге~\ref{src:vulnsnip}, совершённых при каждом вызове программы
-\nameref{app:vuln}, \texttt{cycles} -- измеренное время в циклах процессора,
-\texttt{length} -- длина общего префикса переданной программе \nameref{app:vuln} строки и
-внутренней строки, которая хранится в самой программе.
+из трёх столбцов:
+
+\begin{description}
+\item [\texttt{iterations}] число итераций цикла, представленного на
+  листинге~\ref{src:vulnsnip}, совершённых при каждом вызове программы \nameref{app:vuln}
+\item [\texttt{cycles}] измеренное время в циклах процессора
+\item [\texttt{length}] длина общего префикса переданной программе \nameref{app:vuln} строки и
+  внутренней строки, которая хранится в самой программе
+\end{description}
 
 \begin{figure}[H]
     \includegraphics[width=0.5\linewidth]{ext-to-5-init.png}
