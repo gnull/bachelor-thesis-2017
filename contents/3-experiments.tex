@@ -80,8 +80,8 @@ static inline uint64_t timestamp(void)
 представленной на листинге \ref{src:timestamp}.
 
 Для снятия большого числа измерений времени программами \ref{src:vuln} и
-\ref{src:timestampc}, был написал Perl-скрипт \ref{src:collect.pl}. Основная логика его
-работы преставлена на листинге \ref{src:collect};
+\ref{src:timestampc}, был написал Perl-скрипт \ref{src:collect}. Основная логика его
+работы преставлена на листинге \ref{src:collectsnip};
 
 \begin{lstlisting}
 my ($cmd, $reps, $its, $maxlen) = @ARGV;
@@ -97,7 +97,7 @@ for (my $i = 0; $i < $reps; ++$i) {
 	chomp($cycles);
 	print "$its,$len,$cycles\n"
 }
-\end{lstlisting} \label{src:collect}
+\end{lstlisting} \label{src:collectsnip}
 
 Этот скрипт измеряет время выполнения цикла вызовов \texttt{strcmp} либо при помощи
 программы \ref{src:vuln}, либо при помощи \ref{src:timestampc}, указанное пользователем
