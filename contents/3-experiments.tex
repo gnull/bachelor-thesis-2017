@@ -12,7 +12,7 @@
 
 На листинге \ref{src:vulnsnip} показана основная часть программы \ref{app:vuln}:
 
-\begin{lstlisting}
+\begin{lstlisting}[caption=Отрывок программы \texttt{vulnerable.c}, label=src:vulnsnip]
 int (*my_strcmp)(const char *s1, const char *s2) = strcmp;
 
 char reference[] = "aaa...";
@@ -30,7 +30,7 @@ int main(int argc, char **argv)
 
 	printf("%lld\n", end - begin);
 }
-\end{lstlisting} \label{src:vulnsnip}
+\end{lstlisting}
 
 Для сравнения строк используется библиотечная функция \texttt{strcmp}. Вызовы к ней совершаются
 через глобальный указатель \texttt{my\_strcmp}. Это было сделано для того, чтобы предотвратить оптимизации
@@ -40,7 +40,7 @@ int main(int argc, char **argv)
 Время измерялось при помощи функции \texttt{timestamp}, представленной на листинге
 \ref{src:timestamp}.
 
-\begin{lstlisting}
+\begin{lstlisting}[caption=Функция \texttt{timestamp}, label=src:timestamp]
 static inline uint64_t timestamp(void)
 {
 	uint32_t bottom;
@@ -57,7 +57,7 @@ static inline uint64_t timestamp(void)
 #endif
 	return (((uint64_t) top) << 32) | bottom;
 }
-\end{lstlisting} \label{src:timestamp}
+\end{lstlisting}
 
 Эта функция получает текущее время, обращаясь к счётчику тактов процессора при
 помощи ассемблерной инструкции \texttt{rdtsc}, доступной на процессорах Intel x86.
@@ -83,7 +83,7 @@ static inline uint64_t timestamp(void)
 \ref{app:timestamp}, был написал Perl-скрипт \nameref{app:collect}. Основная логика его
 работы преставлена на листинге \ref{src:collectsnip};
 
-\begin{lstlisting}
+\begin{lstlisting}[caption=Фрагмент скрипта \texttt{collect.pl}, label=src:collectsnip]
 my ($cmd, $reps, $its, $maxlen) = @ARGV;
 
 print "iterations,length,cycles\n";
@@ -97,7 +97,7 @@ for (my $i = 0; $i < $reps; ++$i) {
 	chomp($cycles);
 	print "$its,$len,$cycles\n"
 }
-\end{lstlisting} \label{src:collectsnip}
+\end{lstlisting}
 
 Этот скрипт измеряет время выполнения цикла вызовов \texttt{strcmp} либо при помощи
 программы \ref{app:vuln}, либо при помощи \ref{app:timestamp}, указанное пользователем
@@ -130,10 +130,10 @@ for (my $i = 0; $i < $reps; ++$i) {
 которе было обозначено в уравнении~\ref{eq:noise} как $Z$. Это было сделано при помощи
 команд, представленных на листинге~\ref{src:collcalls}.
 
-\begin{lstlisting}
+\begin{lstlisting}[caption=Команды снятия измерений, label=src:collcalls]
 $ ./collect.pl ./vulnerable 1000000 10 5 > int-to-5-init.csv
 $ ./collect.pl './timestamp ./vulnerable' 1000000 10 5 > ext-to-5-init.csv
-\end{lstlisting} \label{src:collcalls}
+\end{lstlisting}
 
 В результате выполнения команд из листинга~\ref{src:collcalls} были получены два файла
 \texttt{int-to-5-init.csv} и \texttt{ext-to-5-init-csv}. Каждый из которых содержит CSV-таблицу
