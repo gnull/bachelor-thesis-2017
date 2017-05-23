@@ -9,9 +9,12 @@ slides.pdf: slides.tex $(pics)
 $(pics): presentation_rus.pptx
 	unzip -uDD $^ $@
 
+open: slides.pdf
+	evince slides.pdf &
+
 clean:
 	rm -r $(pics)
 	rmdir -p ppt/media/image
 	rm slides.log slides.aux slides.nav slides.out slides.pdf slides.snm slides.toc
 
-.PHONY: all clean
+.PHONY: all clean open
