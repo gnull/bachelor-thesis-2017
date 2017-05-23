@@ -23,7 +23,89 @@
 \end{frame}
 
 \begin{frame}[englogoheader]{Заголовок раздела}
+Что здесь должно быть?
+
+Может быть план?
 \end{frame}
+
+\begin{frame}{Атаки по сторонним каналам}
+    \begin{itemize}
+        \item Атаки на кэш (access-based)
+        \item Атаки по времени
+        \item Атаки по энергопотреблению
+        \item Электромагнитные атаки
+        \item Акустические атаки
+        \item Атаки со внесением ошибок
+        \item Row-hammer
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Ограничения атак по сторонним каналам}
+    \begin{itemize}
+        \item Требуется доступ к системе
+            \begin{itemize}
+                \item Возможность запуска программ на системе: атаки на кэш, Row-hammer
+                \item Физический доступ: атаки по энергопотреблению, электромагнитные, акустические, внемением ошибок
+            \end{itemize}
+        \item Требуется высокоточное и дорогостоящее оборудование
+            \begin{itemize}
+                \item Самописцы, осциллографы: атаки по энергопотреблению, элкетромагнитные
+                \item Микрофоны: акустические атаки
+                \item Лазеры: атаки внесением ошибок
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Атаки по времени}
+    \begin{itemize}
+        \item Могут проводиться удалённо
+        \item Намного проще других типов атак
+        \item Современные процессоры позволяют измерять время с точностью до наносекунд
+        \item Многие сетевые карты позволяют узнать точное время отправки/приёма пакета
+        \item Не требуют наличия учёной степени по электротехнике
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Цель работы}
+    Исследовать, насколько применима атака по времени на время работы программы под Linux.
+~
+    Задачи:
+    \begin{itemize}
+        \item Написать уязвимую к атаке по времени программу
+        \item Снять измерения времени выполнения программы
+        \item Проанализировать распределение полученных измерений
+        \item Сделать выводы о применимости статистических методов к полученным измерениям
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Модель атаки по времени}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[height=0.9\textheight]{images/timing-attack-msc.png}
+    \end{figure}
+\end{frame}
+
+% \begin{frame}[Полученные распределения]
+%     \begin{figure}
+%         \centering
+%         \includegraphics[width=0.45\textwidth]{data/sca-playground.wiki/strcmp_Timing_Attack/attempt-2/plots/int-to-5-init-non-outliers.png}
+%         \includegraphics[width=0.45\textwidth]{data/sca-playground.wiki/strcmp_Timing_Attack/attempt-2/plots/ext-to-5-init.png}
+%     \end{figure}
+% \end{frame}
+
+% \begin{frame}{Kernel Density Estimate}
+%     \begin{figure}
+%         \centering
+%         \includegraphics[width=0.9\textwidth]{data/sca-playground.wiki/strcmp_Timing_Attack/attempt-2/plots/int-to-5-init-non-outliers-density.png}
+%     \end{figure}
+% \end{frame}
+
+% \begin{frame}{Kernel Density Estimate}
+%     \begin{figure}
+%         \centering
+%         \includegraphics[width=0.9\textwidth]{data/sca-playground.wiki/strcmp_Timing_Attack/attempt-2/plots/ext-to-5-init-non-outliers-density.png}
+%     \end{figure}
+% \end{frame}
 
 \begin{frame}{Заголовок}
     \begin{itemize}
