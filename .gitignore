@@ -1,4 +1,5 @@
 *.pptx
+!presentation_rus.pptx
 *.log
 *.toc
 *.pdf
