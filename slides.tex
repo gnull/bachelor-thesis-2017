@@ -142,7 +142,7 @@ $\mu$ -- точечная оценка мат. ожидания
 % Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
 % Date and time: Tue, May 23, 2017 - 09:01:52 AM
 \begin{table}[!htbp] \centering 
-  \caption{Линейная модель для внутренних измерений} 
+  \caption{Линейная регрессия для внутренних измерений} 
   \label{} 
 \begin{tabular}{@{\extracolsep{5pt}}lc} 
 \\[-1.8ex]\hline 
@@ -188,7 +188,7 @@ Residual Std. Error & 51.739 (df = 999702) \\
 % Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
 % Date and time: Tue, May 23, 2017 - 09:05:06 AM
 \begin{table}[!htbp] \centering 
-  \caption{Линейная модель для внешних измерений} 
+  \caption{Линейная регрессия для внешних измерений} 
   \label{} 
 \begin{tabular}{@{\extracolsep{5pt}}lc} 
 \\[-1.8ex]\hline 
@@ -209,14 +209,14 @@ Residual Std. Error & 51,112.740 (df = 999998) \\
 \end{table} 
 \end{frame}
 
-\begin{frame}{Выводы}
+\begin{frame}{Оценка сложности атаки по времени}
 
-Доверительный интервала для мат. ожидания: \\
+Доверительный интервала для наклона в линейной модели: \\
 \begin{equation}
 X = \bar{X} \pm Z \frac{ \sigma }{ \sqrt{n} }
 \end{equation}
 
-Линейная модель для внешних измерений с $\alpha = 0.99$ и $n =10^6$ имеет предел погрешности равный $186$ циклов.
+Линейная регрессия для внешних измерений с $\alpha = 0.99$ и $n =10^6$ имеет предел погрешности равный $186$ циклов.
 Для атаки по времени на программу сравнивающую строки, необходим предел погрешности равный $3-4$ такта. Для его достижения
 нужно увеличить $n$ в $( \frac{186}{4} )^2 = 162 $ раза. Для снятия такого числа измерения потребуется
 $162 / 24 \approx 40$ суток.
