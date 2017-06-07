@@ -1,9 +1,9 @@
-all: build run
+all: build open
 
 build:
 	latexmk -xelatex -synctex=1 main.tex
 	
-run:
+open: build
 	evince main.pdf &
 	
 clean:
