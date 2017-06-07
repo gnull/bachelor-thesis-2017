@@ -153,4 +153,128 @@ $ ./collect.pl './timestamp ./vulnerable' 1000000 10 5 > ext-to-5-init.csv
 R \cite{r}, так как это очень мощный инструмент для статистического анализа и на нём реализованы
 все требуемые для данной работы статистические алгоритмы.
 
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.5\textwidth]{data/sca-playground.wiki/strcmp_Timing_Attack/attempt-2/plots/int-to-5-init-non-outliers.png}
+        \includegraphics[width=0.5\textwidth]{data/sca-playground.wiki/strcmp_Timing_Attack/attempt-2/plots/ext-to-5-init.png}
+        \caption{Q-Q plots}
+    \end{figure}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.9\textwidth]{data/sca-playground.wiki/strcmp_Timing_Attack/attempt-2/plots/int-to-5-init-non-outliers-density.png}
+        \caption{Внутренние измерения}
+    \end{figure}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.9\textwidth]{data/sca-playground.wiki/strcmp_Timing_Attack/attempt-2/plots/ext-to-5-init-density.png}
+        \caption{Внешние измерения}
+    \end{figure}
+
+  % Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+  % Date and time: Tue, May 23, 2017 - 08:11:20 AM
+  \begin{table}[!htbp] \centering 
+    \caption{Точечные оценки среднеквадратичного отклонения} 
+    \label{} 
+  \begin{tabular}{@{\extracolsep{5pt}} ccc} 
+  \\[-1.8ex]\hline 
+  \hline \\[-1.8ex] 
+   & length & cycles \\ 
+  \hline \\[-1.8ex] 
+  1 & $0$ & $51.764$ \\ 
+  2 & $1$ & $49.222$ \\ 
+  3 & $2$ & $50.634$ \\ 
+  4 & $3$ & $50.772$ \\ 
+  5 & $4$ & $52.566$ \\ 
+  \hline \\[-1.8ex] 
+  \end{tabular} 
+  \end{table} 
+
+% Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+% Date and time: Tue, May 23, 2017 - 08:03:32 AM
+\begin{table}[!htbp] \centering 
+  \caption{Доверительные интервалы мат. ожидания} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} cccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & length & left & right \\ 
+\hline \\[-1.8ex] 
+1 & $0$ & $879.413$ & $879.867$ \\ 
+2 & $1$ & $892.966$ & $893.398$ \\ 
+3 & $2$ & $927.871$ & $928.315$ \\ 
+4 & $3$ & $958.985$ & $959.430$ \\ 
+5 & $4$ & $1,009.111$ & $1,009.571$ \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+
+% Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+% Date and time: Tue, May 23, 2017 - 09:01:52 AM
+\begin{table}[!htbp] \centering 
+  \caption{Линейная модель для внутренних измерений} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{1}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-2} 
+\\[-1.8ex] & cycles \\ 
+\hline \\[-1.8ex] 
+ length & 32.556$^{***}$ (32.461, 32.650) \\ 
+  Constant & 868.782$^{***}$ (868.551, 869.013) \\ 
+ \hline \\[-1.8ex] 
+Adjusted R$^{2}$ & 0.442 \\ 
+Residual Std. Error & 51.739 (df = 999702) \\ 
+F Statistic & 791,637.300$^{***}$ (df = 1; 999702) \\ 
+\hline 
+\hline
+\textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+
+% Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+% Date and time: Tue, May 23, 2017 - 08:29:22 AM
+\begin{table}[!htbp] \centering 
+  \caption{Точечные оценки среднеквадратичного отклонения} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} ccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & length & cycles \\ 
+\hline \\[-1.8ex] 
+1 & $0$ & $51,045.670$ \\ 
+2 & $1$ & $51,055.780$ \\ 
+3 & $2$ & $51,097.950$ \\ 
+4 & $3$ & $51,228.100$ \\ 
+5 & $4$ & $51,135.910$ \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+
+% Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+% Date and time: Tue, May 23, 2017 - 09:05:06 AM
+\begin{table}[!htbp] \centering 
+  \caption{Линейная модель для внешних измерений} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{1}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-2} 
+\\[-1.8ex] & cycles \\ 
+\hline \\[-1.8ex] 
+ length & 78.012$^{**}$ ($-$15.081, 171.105) \\ 
+  Constant & 1.2e+6$^{***}$ (1,222,255, 1,222,711) \\ 
+ \hline \\[-1.8ex] 
+Adjusted R$^{2}$ & 0.00000 \\ 
+Residual Std. Error & 51,112.740 (df = 999998) \\ 
+F Statistic & 4.659$^{**}$ (df = 1; 999998) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+
 \clearpage
