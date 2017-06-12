@@ -48,43 +48,45 @@ $ ./collect.pl './timestamp ./vulnerable' 1000000 10 5 > ext-to-5-init.csv
 R \cite{r}, так как это очень мощный инструмент для статистического анализа и на нём реализованы
 все требуемые для данной работы статистические алгоритмы.
 
-    \begin{figure}
-        \centering
-        \includegraphics[width=0.5\textwidth]{data/sca-playground.wiki/strcmp_Timing_Attack/attempt-2/plots/int-to-5-init-non-outliers.png}
-        \includegraphics[width=0.5\textwidth]{data/sca-playground.wiki/strcmp_Timing_Attack/attempt-2/plots/ext-to-5-init.png}
-        \caption{Q-Q plots}
-    \end{figure}
+\subsubsection{Точечные оценки}
 
-    \begin{figure}
-        \centering
-        \includegraphics[width=0.9\textwidth]{data/sca-playground.wiki/strcmp_Timing_Attack/attempt-2/plots/int-to-5-init-non-outliers-density.png}
-        \caption{Внутренние измерения}
-    \end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{data/sca-playground.wiki/strcmp_Timing_Attack/attempt-2/plots/int-to-5-init-non-outliers.png}
+    \includegraphics[width=0.5\textwidth]{data/sca-playground.wiki/strcmp_Timing_Attack/attempt-2/plots/ext-to-5-init.png}
+    \caption{Q-Q plots}
+\end{figure}
 
-    \begin{figure}
-        \centering
-        \includegraphics[width=0.9\textwidth]{data/sca-playground.wiki/strcmp_Timing_Attack/attempt-2/plots/ext-to-5-init-density.png}
-        \caption{Внешние измерения}
-    \end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{data/sca-playground.wiki/strcmp_Timing_Attack/attempt-2/plots/int-to-5-init-non-outliers-density.png}
+    \caption{Внутренние измерения}
+\end{figure}
 
-  % Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-  % Date and time: Tue, May 23, 2017 - 08:11:20 AM
-  \begin{table}[!htbp] \centering 
-    \caption{Точечные оценки среднеквадратичного отклонения} 
-    \label{} 
-  \begin{tabular}{@{\extracolsep{5pt}} ccc} 
-  \\[-1.8ex]\hline 
-  \hline \\[-1.8ex] 
-   & length & cycles \\ 
-  \hline \\[-1.8ex] 
-  1 & $0$ & $51.764$ \\ 
-  2 & $1$ & $49.222$ \\ 
-  3 & $2$ & $50.634$ \\ 
-  4 & $3$ & $50.772$ \\ 
-  5 & $4$ & $52.566$ \\ 
-  \hline \\[-1.8ex] 
-  \end{tabular} 
-  \end{table} 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{data/sca-playground.wiki/strcmp_Timing_Attack/attempt-2/plots/ext-to-5-init-density.png}
+    \caption{Внешние измерения}
+\end{figure}
+
+% Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+% Date and time: Tue, May 23, 2017 - 08:11:20 AM
+\begin{table}[!htbp] \centering 
+\caption{Точечные оценки среднеквадратичного отклонения} 
+\label{} 
+\begin{tabular}{@{\extracolsep{5pt}} ccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+& length & cycles \\ 
+\hline \\[-1.8ex] 
+1 & $0$ & $51.764$ \\ 
+2 & $1$ & $49.222$ \\ 
+3 & $2$ & $50.634$ \\ 
+4 & $3$ & $50.772$ \\ 
+5 & $4$ & $52.566$ \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
 
 % Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
 % Date and time: Tue, May 23, 2017 - 08:03:32 AM
