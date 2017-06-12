@@ -109,7 +109,7 @@ $4$ & $52.566$ \\
 \begin{tabular}{@{\extracolsep{5pt}} ccc} 
 \\[-1.8ex]\hline 
 \hline \\[-1.8ex] 
-Длина & $\s_{out}$ \\ 
+Длина & $s_{out}$ \\ 
 \hline \\[-1.8ex] 
 $0$ & $51,045.670$ \\ 
 $1$ & $51,055.780$ \\ 
@@ -123,6 +123,11 @@ $4$ & $51,135.910$ \\
 Видно, что для внешних измерений точечные оценки превышают оценки внутренних
 измерений примерно в $10^3$ раз.
 
+\subsubsection{Доверительные интервалы}
+
+В следующией таблице представлены доверительные интервалы для математического ожидания
+внутренней задержки.
+
 % Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
 % Date and time: Tue, May 23, 2017 - 08:03:32 AM
 \begin{table}[!htbp] \centering 
@@ -131,16 +136,23 @@ $4$ & $51,135.910$ \\
 \begin{tabular}{@{\extracolsep{5pt}} cccc} 
 \\[-1.8ex]\hline 
 \hline \\[-1.8ex] 
- & length & left & right \\ 
+ Длина & $\mu - ME$ & $\mu + ME$ \\ 
 \hline \\[-1.8ex] 
-1 & $0$ & $879.413$ & $879.867$ \\ 
-2 & $1$ & $892.966$ & $893.398$ \\ 
-3 & $2$ & $927.871$ & $928.315$ \\ 
-4 & $3$ & $958.985$ & $959.430$ \\ 
-5 & $4$ & $1,009.111$ & $1,009.571$ \\ 
+ $0$ & $879.413$ & $879.867$ \\ 
+ $1$ & $892.966$ & $893.398$ \\ 
+ $2$ & $927.871$ & $928.315$ \\ 
+ $3$ & $958.985$ & $959.430$ \\ 
+ $4$ & $1,009.111$ & $1,009.571$ \\ 
 \hline \\[-1.8ex] 
 \end{tabular} 
 \end{table} 
+
+\begin{description}
+\item [$ME$] -- предел погрешности для уровня надёжности $99\%$ \\
+\item [$\mu$] -- точечная оценка мат. ожидания
+\end{description}
+
+\subsubsection{Линейная модель}
 
 % Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
 % Date and time: Tue, May 23, 2017 - 09:01:52 AM
