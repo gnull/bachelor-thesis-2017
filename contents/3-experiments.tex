@@ -48,26 +48,34 @@ $ ./collect.pl './timestamp ./vulnerable' 1000000 10 5 > ext-to-5-init.csv
 R \cite{r}, так как это очень мощный инструмент для статистического анализа и на нём реализованы
 все требуемые для данной работы статистические алгоритмы.
 
+\subsubsection{Оценка плотности распределения}
+
+В данной секции представлены графики функций ядерной оценки плотности
+распределения (kernel density estimate) для внутренних и внешних задержек.
+Они позволяют визуально оценить форму расрпеделений полученных измерений, а так же
+видуально сравнить измерения между собой.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{data/sca-playground.wiki/strcmp_Timing_Attack/attempt-2/slides/int-to-5-init-non-outliers-density.png}
+    \caption{Ядерная оценка плотности распределения внутренней задержки}
+\end{figure} \label{fig:kde-in}
+
+На графике \ref{fig:kde-in} легко заметить, что распределения задержек сравнения
+строк, имеющих общие префиксы различной длины, схожи по форме, но различаются
+средним значением, которое возрастает вместе с ростом длины общего префикса.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{data/sca-playground.wiki/strcmp_Timing_Attack/attempt-2/slides/ext-to-5-init-density.png}
+    \caption{Ядерная оценка плотности распределения внешней задержки}
+\end{figure} \label{fig:kde-out}
+
+На графике \ref{fig:kde-out} видно, что плотности распределения для всех длин
+общего префикса настолько схожи, что сливаются в одну линию, и на первый взгляд
+не удаётся рассмотреть на нём каких-то различий между ними.
+
 \subsubsection{Точечные оценки}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.5\textwidth]{data/sca-playground.wiki/strcmp_Timing_Attack/attempt-2/plots/int-to-5-init-non-outliers.png}
-    \includegraphics[width=0.5\textwidth]{data/sca-playground.wiki/strcmp_Timing_Attack/attempt-2/plots/ext-to-5-init.png}
-    \caption{Q-Q plots}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.9\textwidth]{data/sca-playground.wiki/strcmp_Timing_Attack/attempt-2/plots/int-to-5-init-non-outliers-density.png}
-    \caption{Внутренние измерения}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.9\textwidth]{data/sca-playground.wiki/strcmp_Timing_Attack/attempt-2/plots/ext-to-5-init-density.png}
-    \caption{Внешние измерения}
-\end{figure}
 
 % Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
 % Date and time: Tue, May 23, 2017 - 08:11:20 AM
