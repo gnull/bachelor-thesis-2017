@@ -61,11 +61,10 @@ R \cite{r}, так как это очень мощный инструмент д
 внутренней задержки сравнения строк, которые совпали на различное количество
 первых символов.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{data/sca-playground.wiki/strcmp_Timing_Attack/attempt-2/slides/int-to-5-init-non-outliers-density.png}
-    \caption{Ядерная оценка плотности распределения внутренней задержки}
-\end{figure} \label{fig:kde-in}
+\addimghere
+{data/sca-playground.wiki/strcmp_Timing_Attack/attempt-2/slides/int-to-5-init-non-outliers-density.png}{}
+{Ядерная оценка плотности распределения внутренней задержки}
+{fig:kde-in}
 
 Формы этих функций распределения схожи, но имеют различные
 смещения по горизонтали. Эти смещения возрастают с ростом длины общего префикса
@@ -74,11 +73,10 @@ R \cite{r}, так как это очень мощный инструмент д
 На графике \ref{fig:kde-out} показаны плотности распределения внешней задержки
 сравнения строк, совпавших на различное число первых символов.
 
-\begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{data/sca-playground.wiki/strcmp_Timing_Attack/attempt-2/slides/ext-to-5-init-density.png}
-    \caption{Ядерная оценка плотности распределения внешней задержки}
-\end{figure} \label{fig:kde-out}
+\addimghere
+{data/sca-playground.wiki/strcmp_Timing_Attack/attempt-2/slides/ext-to-5-init-density.png}{}
+{Ядерная оценка плотности распределения внешней задержки}
+{fig:kde-out}
 
 Эти распределения имеют настолько схожую форму, что визуально не различимы.
 Кроме того, внешние измерения сильнее смещены вправо, чем внутренние. Это объясняется
