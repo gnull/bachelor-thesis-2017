@@ -182,11 +182,21 @@ $4$ & $1,222,233.000$ & $1,222,339.000$ \\
 тактов, это намного больше, чем значения из первой таблицы, которые не превышают
 одного такта.
 
+Были построены оценки параметров линейной регрессии для внутренних и внешних
+измерений. Таблицы \ref{lr_in} и \ref{lr_out} содержат оценки для указанных в
+уравнении \ref{eq:lm} параметров $\beta_L$ и $\beta_0$, а также стандарной ошибки
+$\beta_L$, обозначенной как $SE(\beta_L)$.
+
+В таблице \ref{lr_in} представлены оценки параметров линейной регрессии для
+внутренних измерений.
+
+\nopagebreak
+
 % Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
 % Date and time: Tue, May 23, 2017 - 09:01:52 AM
 \begin{table}[!htbp] \centering 
 \caption{Параметры линейной регрессии для внутренних измерений} 
-\label{} 
+\label{lr_in} 
 \begin{tabular}{@{\extracolsep{5pt}}lc} 
 \\[-1.8ex]\hline 
 \hline \\[-1.8ex] 
@@ -203,14 +213,17 @@ $SE(\beta_L)$ & 51.739 (df = 999702) \\
 \textit{Примечание:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
 \end{tabular} 
 \end{table}
-$SE(\beta_L)$ -- стандартная ошибка для $\beta_L$
-%% http://statistica.ru/theory/osnovy-lineynoy-regressii/
+
+В таблице \ref{lr_out} представлены оценки параметров линейной регрессии для
+внешних измерений.
+
+\nopagebreak
 
 % Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
 % Date and time: Tue, May 23, 2017 - 09:05:06 AM
 \begin{table}[!htbp] \centering 
 \caption{Параметры линейной регрессии для внешних измерений} 
-\label{} 
+\label{lr_out} 
 \begin{tabular}{@{\extracolsep{5pt}}lc} 
 \\[-1.8ex]\hline 
 \hline \\[-1.8ex] 
@@ -227,7 +240,6 @@ $SE(\beta_L)$ & 51,112.740 (df = 999998) \\
 \textit{Примечание:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
 \end{tabular} 
 \end{table} 
-$SE(\beta_L)$ -- стандартная ошибка для $\beta_L$
 
 \subsection{Результат}
 
