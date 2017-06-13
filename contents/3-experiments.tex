@@ -28,6 +28,8 @@
 На листинге \ref{src:collcalls} представлены Shell-команды, использованные для снятия
 измерений.
 
+\nopagebreak
+
 \begin{lstlisting}[caption=Команды снятия измерений, label=src:collcalls]
 $ ./collect.pl ./vulnerable 1000000 10 5 > int-to-5-init.csv
 $ ./collect.pl './timestamp ./vulnerable' 1000000 10 5 > ext-to-5-init.csv
@@ -61,6 +63,8 @@ R \cite{r}, так как это очень мощный инструмент д
 внутренней задержки сравнения строк, которые совпали на различное количество
 первых символов.
 
+\nopagebreak
+
 \addimghere
 {data/sca-playground.wiki/strcmp_Timing_Attack/attempt-2/slides/int-to-5-init-non-outliers-density.png}{}
 {Ядерная оценка плотности распределения внутренней задержки}
@@ -72,6 +76,8 @@ R \cite{r}, так как это очень мощный инструмент д
 
 На графике \ref{fig:kde-out} показаны плотности распределения внешней задержки
 сравнения строк, совпавших на различное число первых символов.
+
+\nopagebreak
 
 \addimghere
 {data/sca-playground.wiki/strcmp_Timing_Attack/attempt-2/slides/ext-to-5-init-density.png}{}
