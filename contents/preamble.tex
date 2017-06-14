@@ -111,7 +111,12 @@
 \renewcommand{\footrulewidth}{0pt}
 \fancypagestyle{plain}{
     \fancyhf{}
-    \chead{\thepage}
+    \fancyfoot[C]{\textrm{\thepage}}
+    \fancyheadoffset{0mm}
+    \fancyfootoffset{0mm}
+    \setlength{\headheight}{17pt}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
 }
 
 % Формат подрисуночных надписей
