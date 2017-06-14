@@ -99,7 +99,7 @@ R \cite{r}, так как это очень мощный инструмент д
 
 % Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
 % Date and time: Tue, May 23, 2017 - 08:11:20 AM
-\begin{table}[!htbp] \centering 
+\begin{table}[H] \centering 
 \caption{Точечные оценки $s_{in}$ и $s_{out}$} 
 \label{pe_s_in} 
 \begin{tabular}{@{\extracolsep{5pt}} ccc} 
@@ -131,7 +131,7 @@ $4$ & $52.566$ & $51,135.910$ \\
 
 % Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
 % Date and time: Tue, May 23, 2017 - 08:03:32 AM
-\begin{table}[!htbp] \centering 
+\begin{table}[H] \centering 
   \caption{Доверительные интервалы математического ожидания} 
   \label{ci_in} 
 \begin{tabular}{@{\extracolsep{5pt}} cccc} 
@@ -155,7 +155,7 @@ $4$ & $52.566$ & $51,135.910$ \\
 
 % Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
 % Date and time: Tue, Jun 13, 2017 - 09:16:45 AM
-\begin{table}[!htbp] \centering 
+\begin{table}[H] \centering 
   \caption{Доверительные интервалы для математического ожидания} 
   \label{ci_out} 
 \begin{tabular}{@{\extracolsep{5pt}} cccc} 
@@ -194,7 +194,7 @@ $\beta_L$, обозначенной как $SE(\beta_L)$.
 
 % Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
 % Date and time: Tue, May 23, 2017 - 09:01:52 AM
-\begin{table}[!htbp] \centering 
+\begin{table}[H] \centering 
 \caption{Параметры линейной регрессии для внутренних измерений} 
 \label{lr_in} 
 \begin{tabular}{@{\extracolsep{5pt}}lc} 
@@ -221,7 +221,7 @@ $SE(\beta_L)$ & 51.739 (df = 999702) \\
 
 % Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
 % Date and time: Tue, May 23, 2017 - 09:05:06 AM
-\begin{table}[!htbp] \centering 
+\begin{table}[H] \centering 
 \caption{Параметры линейной регрессии для внешних измерений} 
 \label{lr_out} 
 \begin{tabular}{@{\extracolsep{5pt}}lc} 
@@ -241,38 +241,66 @@ $SE(\beta_L)$ & 51,112.740 (df = 999998) \\
 \end{tabular} 
 \end{table} 
 
-\subsection{Результат}
+\subsection{Результат эксперимента}
 
-Доверительный интервал для наклона в линейной модели:
-\begin{equation}
+Доверительный интервал для наклона линейной регрессии стоится по
+формуле \ref{eq:lm-confint}.
+
+\nopagebreak
+
+\begin{equation} \label{eq:lm-confint}
 \beta_L = \hat{\beta_L} \pm t^{*}_{df} \times SE(\beta_L)
 \end{equation}
-\begin{itemize}
-\item $t^{*}_{df}$ -- критическое значение t-критерия Стьюдента, определяется
-     требуемым уроврем надёжности ($\alpha = 0.99$) и числом степеней свободы $df$;
-\item $\hat{\beta_L}$ -- точечная оценка наклона;
-\item $SE(\beta_L)$ -- стандартная ошибка $\beta_L$.
-\end{itemize}
 
-Стандартная ошибка: \\
-\begin{equation}
+В формуле \ref{eq:lm-confint} использованы следующие обозначения:
+
+\nopagebreak
+
+\begin{description}
+\item[$t^{*}_{df}$] -- критическое значение t-критерия Стьюдента, определяется
+     требуемым уроврем надёжности ($\alpha = 0.99$) и числом степеней свободы $df$;
+\item[$\hat{\beta_L}$] -- точечная оценка наклона;
+\item[$SE(\beta_L)$] -- стандартная ошибка $\beta_L$.
+\end{description}
+
+Стандартная ошибка из формулы \ref{eq:lm-confint} определяется выражением \ref{lm-se}.
+
+\nopagebreak
+
+\begin{equation} \label{lm-se}
 SE(\beta_L) = \frac{ \sigma_{res} }{ \sum^n_{i=1} (L_i - \bar{L})^2 }
 \end{equation}
-\begin{equation}
+
+Символом $\sigma_{res}$ в выражении \ref{lm-se} обозначается несмещённая оценка среднеквадратического отклонения
+ошибок, которая определяется формулой \ref{lm-sigma}. Символом $f$ в формуле \ref{lm-sigma}
+обозначается функция регрессии, определённая в формуле \ref{eq:regf}.
+
+\begin{equation} \label{lm-sigma}
 \sigma_{res}^2 = \frac{ \sum^n_{i=1}  (X_i - f(L_i))^2 }{ n - 2 }
 \end{equation}
-\begin{itemize}
-\item $\sigma_{res}^2$ -- несмещённая оценка дисперсии ошибок \\
-\item $f(L) = \beta_{L} \times L + \beta_0$ -- функция предсказания времени для заданной длины строки \\
-\end{itemize}
 
-Выборка из $n = 10^6$ измерений имеет $ME = t^{*}_{df} \times SE(\beta_L) = 186.186$.
-Если атакующий хочет различать случай с $\beta_L = 3.2556$ от случая с $\beta_L = 0$,
-ему потребуется уменьшить $ME$ до $\frac{3.2556}{2} = 1.6278$. Для этого,
-значение $SE(\beta_L)$ потребуется уменьшить в $\frac{186.186}{1.6278} = 114.37$,
-что, в свою очередь, потребует увеличения $n$ в $114.37^2 = 13082.53$ раз.
-\\[0.5cm]
-Снятие $n = 10^6$ измерений потребовало около часа времени. Умножение этого времени в $13082.53$
-раз, даёт 2 года 15 дней.
+Как видно из таблицы \ref{lr_out}, постоенный доверительный интервал для
+наклона модели внешних измерений имеет предел погрешности равный
+$ME = t^{*}_{df} \times SE(\beta_L) = 171.105 - 15.081 = 186.186$.
+В то же время в таблице
+\ref{lr_in} доверительный интервал для наклона внутренних измерений
+строится вокруг значения $\beta_L = 32.556$. Так как при этом внутренний цикл в
+модели программы верификации пароля совершал $10$ итераций, при атаке
+в рельных условиях это значение будет в $10$ раз меньше:
+$\frac{32.556}{10} \approx 3.25 $. Так как атакующему при проведении атаки
+требуется различать случай $\beta_L = 0$ и случай $\beta_L = 3.25$,
+он должен уменьшить предел погрешности до $ME \approx \frac{3.25}{2} \approx 1.625$.
+Для достижения этого, ему потребуется уменьшить имеющееся значение $ME = 186.186$
+в $\frac{186.186}{1.625} \approx 114.58$ раз.
+
+Формулы \ref{lm-sigma} и \ref{lm-se} описывают зависимость между пределом
+погрешности $SE$ и числом измерений $n$. Для того, чтобы уменьшить $SE$
+в $114.58$ раз, $n$ потребуется увеличить в $114.58^2$ раз. Это значит,
+что для проведения успешной атаки, атакующий будет вынужден снять
+$10^6 \times 114.58^2$ измерений.
+
+Если для снятия $10^6$
+измерений потребовался один час времени, то для требуемого числа измерений
+потребуется более двух лет.
 
 \clearpage
