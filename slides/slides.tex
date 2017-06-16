@@ -1,0 +1,272 @@
+\documentclass[14pt]{beamer}
+\usepackage[english, russian]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{itmobeamer}
+\usepackage[labelformat=empty]{caption}
+
+\title[Атаки по сторонним каналам]{}
+\author[]{Олейников Иван}
+\institute[]{Университет ИТМО}
+\date[]{Санкт-Петербург, 2017}
+
+\begin{document}
+
+\begin{frame}[noheader,noframenumbering]
+
+\centering
+
+\textbf{\large Кафедра безопасных информационных технологий} \\[0.5cm]
+Выпускная квалификационная работа \\[1cm]
+Атаки по сторонним каналам \\[1cm]
+{
+  \small
+  
+  Автор: студент группы P3452 Олейников Иван Викторович \\
+  Научный руководитель: Левина Алла Борисовна
+} \\[1cm]
+{\footnotesize Санкт-Петербург, 2017}
+
+\end{frame}
+
+\begin{frame}{Цель работы}
+    Исследование эффективности атак по сторонним каналам на программу валидации
+    пароля в ОС Linux. \\[3mm]
+    Задачи:
+    \begin{itemize}
+        \item Выбор наиболее перспективных типов атак по сторонним каналам к
+              программам под ОС Linux.
+        \item Анализ атак по сторонним каналам на применимость к программе валидации
+              пароля.
+        \item Разработка модели уязвимой программы валидации пароля.
+        \item Анализ полученных результатов.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[nologo]{Типы атак по сторонним каналам}
+    \begin{itemize}
+        \item Атаки на кэш (access-based)
+        \item Атаки по времени
+        \item Атаки по энергопотреблению
+        \item Электромагнитные атаки
+        \item Акустические атаки
+        \item Атаки со внесением ошибок
+        \item Row-hammer
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Ограничения атак по сторонним каналам}
+    \begin{itemize}
+        \item Требуется доступ к системе
+            \begin{itemize}
+                \item Возможность запуска программ на системе: атаки на кэш, Row-hammer
+                \item Физический доступ: атаки по энергопотреблению, электромагнитные, акустические, внемением ошибок
+            \end{itemize}
+        \item Требуется высокоточное и дорогостоящее оборудование
+            \begin{itemize}
+                \item Самописцы, осциллографы: атаки по энергопотреблению, элкетромагнитные
+                \item Микрофоны: акустические атаки
+                \item Лазеры: атаки внесением ошибок
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Атаки по времени}
+    \begin{itemize}
+        \item Могут проводиться удалённо
+        \item Намного проще других типов атак
+        \item Современные процессоры позволяют измерять время с точностью до наносекунд
+        \item Многие сетевые карты позволяют узнать точное время отправки/приёма пакета
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Модель атаки по времени}
+    \begin{figure}
+        \centering
+        \includegraphics[height=0.9\textheight]{images/timing-attack-msc.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}[nologo]
+    \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{data/sca-playground.wiki/strcmp_Timing_Attack/attempt-2/slides/int-to-5-init-non-outliers-density.png}
+        \caption{Ядерная оценка плотности распределения внутренней задержки}
+    \end{figure}
+\end{frame}
+
+\begin{frame}[nologo]
+    \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{data/sca-playground.wiki/strcmp_Timing_Attack/attempt-2/slides/ext-to-5-init-density.png}
+        \caption{Ядерная оценка плотности распределения внешней задержки}
+    \end{figure}
+\end{frame}
+
+\begin{frame}[nologo]{Параметры внутренней задержки}
+  % Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+  % Date and time: Tue, May 23, 2017 - 08:11:20 AM
+  \begin{table}[!htbp] \centering 
+    \caption{Точечные оценки среднеквадратического отклонения ($\sigma$)} 
+    \label{} 
+  \begin{tabular}{@{\extracolsep{5pt}} ccc} 
+  \\[-1.8ex]\hline 
+  \hline \\[-1.8ex] 
+   Длина & $\sigma$ \\ 
+  \hline \\[-1.8ex] 
+  $0$ & $51.764$ \\ 
+  $1$ & $49.222$ \\ 
+  $2$ & $50.634$ \\ 
+  $3$ & $50.772$ \\ 
+  $4$ & $52.566$ \\ 
+  \hline \\[-1.8ex] 
+  \end{tabular} 
+  \end{table} 
+\end{frame}
+
+\begin{frame}[nologo]{Параметры внутренней задержки}
+% Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+% Date and time: Tue, May 23, 2017 - 08:03:32 AM
+\begin{table}[!htbp] \centering 
+  \caption{Доверительные интервалы мат. ожидания} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} cccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ Длина & $\mu - ME$ & $\mu + ME$ \\ 
+\hline \\[-1.8ex] 
+ $0$ & $879.413$ & $879.867$ \\ 
+ $1$ & $892.966$ & $893.398$ \\ 
+ $2$ & $927.871$ & $928.315$ \\ 
+ $3$ & $958.985$ & $959.430$ \\ 
+ $4$ & $1,009.111$ & $1,009.571$ \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+
+$ME$ -- предел погрешности для уровня надёжности $99\%$ \\
+$\mu$ -- точечная оценка мат. ожидания
+
+\end{frame}
+
+\begin{frame}{Линейная регрессия с одной независимой переменной}
+  \begin{equation}
+  X = \beta_L \times L + \beta_0 + \varepsilon
+  \end{equation}
+
+  $X$ -- время \\
+  $L$ -- длина строки \\
+  $\varepsilon$ -- случайная ошибка \\
+\end{frame}
+
+\begin{frame}[nologo]
+  % Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+  % Date and time: Tue, May 23, 2017 - 09:01:52 AM
+  \begin{table}[!htbp] \centering 
+    \caption{Параметры линейной регрессии для внутренних измерений} 
+    \label{} 
+  \begin{tabular}{@{\extracolsep{5pt}}lc} 
+  \\[-1.8ex]\hline 
+  \hline \\[-1.8ex] 
+   & \multicolumn{1}{c}{\textit{Зависимая переменная:}} \\ 
+  \cline{2-2} 
+  \\[-1.8ex] & X \\ 
+  \hline \\[-1.8ex] 
+    $\beta_L$ & 32.556$^{***}$ (32.461, 32.650) \\ 
+    $\beta_0$ & 868.782$^{***}$ (868.551, 869.013) \\ 
+   \hline \\[-1.8ex] 
+  $SE(\beta_L)$ & 51.739 (df = 999702) \\ 
+  \hline 
+  \hline
+  \textit{Примечание:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+  \end{tabular} 
+  \end{table}
+  $SE(\beta_L)$ -- стандартная ошибка для $\beta_L$
+  %% http://statistica.ru/theory/osnovy-lineynoy-regressii/
+\end{frame}
+
+\begin{frame}{Параметры внешней задержки}
+  % Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+  % Date and time: Tue, May 23, 2017 - 08:29:22 AM
+  \begin{table}[!htbp] \centering 
+    \caption{Точечные оценки среднеквадратического отклонения ($\sigma$)} 
+    \label{} 
+  \begin{tabular}{@{\extracolsep{5pt}} ccc} 
+  \\[-1.8ex]\hline 
+  \hline \\[-1.8ex] 
+  Длина & $\sigma$ \\ 
+  \hline \\[-1.8ex] 
+  $0$ & $51,045.670$ \\ 
+  $1$ & $51,055.780$ \\ 
+  $2$ & $51,097.950$ \\ 
+  $3$ & $51,228.100$ \\ 
+  $4$ & $51,135.910$ \\ 
+  \hline \\[-1.8ex] 
+  \end{tabular} 
+  \end{table} 
+\end{frame}
+
+\begin{frame}[nologo]
+  % Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+  % Date and time: Tue, May 23, 2017 - 09:05:06 AM
+  \begin{table}[!htbp] \centering 
+    \caption{Параметры линейной регрессии для внешних измерений} 
+    \label{} 
+  \begin{tabular}{@{\extracolsep{5pt}}lc} 
+  \\[-1.8ex]\hline 
+  \hline \\[-1.8ex] 
+   & \multicolumn{1}{c}{\textit{Зависимая переменная:}} \\ 
+  \cline{2-2} 
+  \\[-1.8ex] & $X$ \\ 
+  \hline \\[-1.8ex] 
+    $\beta_L$ & 78.012$^{**}$ ($-$15.081, 171.105) \\ 
+    $\beta_0$ & 1.2e+6$^{***}$ (1,222,255, 1,222,711) \\ 
+   \hline \\[-1.8ex] 
+  $SE(\beta_L)$ & 51,112.740 (df = 999998) \\ 
+  \hline 
+  \hline \\[-1.8ex] 
+  \textit{Примечание:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+  \end{tabular} 
+  \end{table} 
+  $SE(\beta_L)$ -- стандартная ошибка для $\beta_L$
+\end{frame}
+
+\begin{frame}{Оценка требуемого числа измерений}
+  Доверительный интервал для наклона в линейной модели: \\
+  \begin{equation}
+  \beta_L = \hat{\beta_L} \pm t^{*}_{df} \times SE(\beta_L)
+  \end{equation}
+  \begin{itemize}
+   \item $t^{*}_{df}$ -- критическое значение t-критерия Стьюдента, определяется
+         требуемым уроврем надёжности ($\alpha = 0.99$) и числом степеней свободы $df$\\
+   \item $\hat{\beta_L}$ -- точечная оценка наклона\\
+   \item $SE(\beta_L)$ -- стандартная ошибка $\beta_L$
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[nologo]{Оценка требуемого числа измерений}
+  Стандартная ошибка: \\
+  \begin{equation}
+  SE(\beta_L) = \frac{ \sigma_{res} }{ \sum^n_{i=1} (L_i - \bar{L})^2 }
+  \end{equation}
+  \begin{equation}
+  \sigma_{res}^2 = \frac{ \sum^n_{i=1}  (X_i - f(L_i))^2 }{ n - 2 }
+  \end{equation}
+  \begin{itemize}
+    \item $\sigma_{res}^2$ -- несмещённая оценка дисперсии ошибок \\
+    \item $f(L) = \beta_{L} \times L + \beta_0$ -- функция предсказания времени для заданной длины строки \\
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[nologo]{Результат}
+\begin{itemize}
+\item  $ME = t^{*}_{df} \times SE(\beta_L) = 186.186$ при $n = 10^6$;
+\item атакующий хочет различать случай с $\beta_L = 3.2556$ от случая с $\beta_L = 0$;
+\item потребуется уменьшить $ME$ до $\frac{3.2556}{2} = 1.6278$;
+\item потребуется увеличить $n$ в $114.37^2 = 13082.53$ раз;
+\item на получение одного символа уйдёт $\approx$ 2 года 15 дней;
+\end{itemize}
+\end{frame}
+
+\itmothankyou
+
+\end{document}

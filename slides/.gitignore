@@ -1,0 +1,9 @@
+*.pptx
+!presentation_rus.pptx
+*.log
+*.toc
+*.pdf
+*.aux
+*.nav
+*.out
+*.snm
