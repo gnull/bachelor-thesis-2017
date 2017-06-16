@@ -4,3 +4,9 @@
 [submodule "data/sca-playground.wiki"]
 	path = data/sca-playground.wiki
 	url = https://github.com/gnull/sca-playground.wiki.git
+[submodule "slides/data/sca-playground"]
+	path = slides/data/sca-playground
+	url = https://github.com/gnull/sca-playground.git
+[submodule "slides/data/sca-playground.wiki"]
+	path = slides/data/sca-playground.wiki
+	url = https://github.com/gnull/sca-playground.wiki.git

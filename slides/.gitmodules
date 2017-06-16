@@ -1,6 +1,0 @@
-[submodule "data/sca-playground"]
-	path = data/sca-playground
-	url = https://github.com/gnull/sca-playground.git
-[submodule "data/sca-playground.wiki"]
-	path = data/sca-playground.wiki
-	url = https://github.com/gnull/sca-playground.wiki.git
